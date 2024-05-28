@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你的摄影世界</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+		/* 导航栏样式 */
+        header {
+            background-color: #333;/* 导航栏背景色 */
+            color: #fff;
+            padding: 20px 0;/* 导航栏内边距 */
+        }
+		
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+		nav ul li:first-child {
+			margin-left: 20px; /* 设置第一个导航链接的左边距 */
+		}
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+		/* 导航栏样式 */
+		
+        .section {
+            padding: 50px;
+        }
+		/* 第一个 div 样式 */
+		#home {
+			background-image: url("img/cloud(2).jpg");
+			background-size: cover
+			background-repeat: repeat;
+			position: relative;
+			width: 100%;
+			height: 50%;
+			color: white; /* 文字颜色 */
+			padding: 20px; /* 内边距 */
+			padding-bottom: 20%; /* 增加底部的高度 */
+		}
+		#landscape{
+
+		}
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .buttons a:hover {
+            background-color: #555;
+        }
+
+        /* 图片放大样式 */
+        .enlarged {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .enlarged:hover {
+            cursor: pointer;
+        }
+
+        .enlarged img {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="landspace.html">风光摄影</a></li>
+                <li><a href="portrait.html">人像摄影</a></li>
+                <li><a href="vedio.html">视频作品</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="home" class="section" >
+        <h1>欢迎来到你的摄影世界</h1>
+        <p>这里记录着我眼中的美丽与感动，无论是自然的风光、人物的肖像，还是生活中的点滴，都有着属于它们的故事。点击下方的按钮，探索更多精彩吧！</p>
+        <div class="buttons">
+            <a href="#landscape">风光摄影</a>
+            <a href="#portrait">人像摄影</a>
+            <a href="#videos">视频作品</a>
+        </div>
+    </div>
+
+    <div id="landscape" class="section">
+        <!-- 风光摄影的图片和说明 -->
+        <div>
+            <img src="img/IMG_6119.jpg" alt="风光摄影" class="enlargable" width="50%">
+            <p>这是一张美丽的风景照片。</p>
+        </div>
+    </div>
+
+    <div id="portrait" class="section">
+        <!-- 人像摄影的图片和说明 -->
+        <div>
+            <img src="img/首页人像.jpg" alt="人像摄影" class="enlargable"width="50%">
+            <p>这是一张精美的人像照片。</p>
+        </div>
+    </div>
+
+    <div id="videos" class="section">
+        <!-- 视频作品的视频和说明 -->
+        <div>
+            <video src="img/敬香语.mov" controls class="enlargable"width="50%"></video>
+            <p>这是我的视频作品之一。</p>
+        </div>
+    </div>
+
+    <script>
+        // 图片和视频放大功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const mediaElements = document.querySelectorAll('.enlargable');
+
+            mediaElements.forEach(element => {
+                element.addEventListener('click', function() {
+                    this.classList.toggle('enlarged');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
